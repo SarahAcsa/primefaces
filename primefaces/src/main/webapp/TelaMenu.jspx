@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ui:composition template="template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://www.ambientinformatica.com.br/jsf2"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="corpo">
+		<Title>Menu</Title>
+
+
+		<p:layout fullPage="true">
+
+			<p:layoutUnit position="west" size="250" resizable="false"
+				style="font-weight:normal">
+
+				<p:panelMenu style="width:250">
+
+
+					<p:separator />
+					<p:submenu label="Categorias">
+						<p:menuitem value="Eletrônico" actionListener="#{ProdutoControl.listar3()}"  process="@form" update="@form" onsuccess="location.reload();"/>
+						<p:menuitem value="Eletrodomésticos" actionListener="#{ProdutoControl.listar4()}"  process="@form" update="@form" onsuccess="location.reload();" />
+						<p:menuitem value="Móvel" actionListener="#{ProdutoControl.listar5()}"  process="@form" update="@form" onsuccess="location.reload();"/>
+						<p:menuitem value="Outros" actionListener="#{ProdutoControl.listar6()}"  process="@form" update="@form" onsuccess="location.reload();" />
+					</p:submenu>
+				</p:panelMenu>
+
+
+
+			</p:layoutUnit>
+
+
+
+			<p:layoutUnit position="center">
+				<h:form>
+					<p:growl id="messages" />
+
+					<p:menubar>
+						<p:submenu label="Opções" style="font-weight:bold">
+							<p:submenu label="Minhas doações">
+								<p:menuitem value="Editar" url="#" />
+								<p:menuitem value="Visualizar" url="#" />
+							</p:submenu>
+							<p:menuitem value="Perfil" url="#" />
+							<p:separator />
+							<p:menuitem value="Sair" url="#" />
+						</p:submenu>
+
+						<p:submenu label="Cadastro">
+							<p:menuitem value="Cadastrar nova doação"
+								url="http://localhost:8080/primefaces/TelaCadProduto.jsf" />
+
+						</p:submenu>
+
+						<p:submenu label="Help">
+
+							<p:submenu label="Search">
+
+							</p:submenu>
+						</p:submenu>
+
+
+						<f:facet name="options">
+
+							<p:inputText id="txtPesquisa" style="margin:1px 10px 1px 1px;"
+								placeholder="Search" value="#{ProdutoControl.nome}" />
+							<p:commandButton actionListener="#{ProdutoControl.listar2()}"
+								value="Pesquisar" process="@form" update="@form"
+								onsuccess="location.reload();"/>
+							
+						</f:facet>
+					</p:menubar>
+					
+				</h:form>
+				<p:dataTable id="produtos" value="#{ProdutoControl.produtos2}"
+						var="cont"  width="40%" emptyMessage="Sem registros" rows="4" paginator="true">
+						
+					
+						<p:column sortBy="#{cont.nome }">
+							<f:facet name="header">
+								<h:outputText value="Nome" />
+							</f:facet>
+							<h:outputText value="#{cont.nome }" />
+						</p:column>
+						<p:column sortBy="#{cont.categoria }">
+							<f:facet name="header">
+								<h:outputText value="categoria" />
+							</f:facet>
+							<h:outputText value="#{cont.categoria }" />
+						</p:column>
+						<p:column sortBy="#{cont.estado }">
+							<f:facet name="header">
+								<h:outputText value="estado" />
+							</f:facet>
+							<h:outputText value="#{cont.estado }" />
+						</p:column>
+						<p:column style="width: 30px; text-align: center">
+    			<p:commandButton icon="ui-icon-check" title="Selecionar" process="@this" />
+    			
+    		</p:column>
+						
+					</p:dataTable>
+				<p:commandButton value="ver" onclick=" PF('wdialog').show();" />
+				<p:dialog id="dialog" widgetVar="wdialog" > 
+				sarah
+				</p:dialog>
+				
+			</p:layoutUnit>
+		
+		
+		</p:layout>
+
+	</ui:define>
+</ui:composition>

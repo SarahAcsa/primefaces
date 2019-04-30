@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ui:composition template="template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://www.ambientinformatica.com.br/jsf2"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="corpo">
+
+
+		<p:panel header="Cadastro de Produtos" id="panel">
+			<h:panelGrid columns="2">
+				<h:outputText value="Nome" style="font-weight:bold"></h:outputText>
+				<p:inputText value="#{ProdutoControl.produto.nome }"></p:inputText>
+			
+				<h:outputText value="Categoria" style="font-weight:bold"></h:outputText>
+				<p:selectOneMenu id="console1"
+					value="#{ProdutoControl.produto.categoria }" style="width:125px">
+
+					<f:selectItem itemLabel="Eletronico" itemValue="Eletronico" />
+					<f:selectItem itemLabel="Eletrodoméstico" itemValue="Eletrodoméstico" />
+					<f:selectItem itemLabel="Movél" itemValue="Movél" />
+					<f:selectItem itemLabel="Outros" itemValue="Outros" />
+				</p:selectOneMenu>
+				
+				<h:outputText value="Estado" style="font-weight:bold"></h:outputText>
+				<p:selectOneMenu id="console2"
+					value="#{ProdutoControl.produto.estado }" style="width:125px">
+					<f:selectItem itemLabel="Utilizavel" itemValue="Utilizavel" />
+					<f:selectItem itemLabel="Inutilizavel" itemValue="Inutilizavel" />
+					<f:selectItem itemLabel="Sucata" itemValue="Sucata" />
+				</p:selectOneMenu>
+				
+				
+				<h:outputText value="Forma Descarte" style="font-weight:bold"></h:outputText>
+				<p:selectOneMenu id="console3"
+					value="#{ProdutoControl.produto.formadescarte }" style="width:200px">
+
+					<f:selectItem itemLabel="Recolhimento Direto" itemValue="Recolhimento Direto" />
+					<f:selectItem itemLabel="Recolhimento em domicílio" itemValue="Recolhimento em domicílio" />
+
+				</p:selectOneMenu>
+				
+				
+				<h:outputText value="Descrição" style="font-weight:bold"></h:outputText>				
+				<p:inputTextarea rows="4" cols="33" value="#{ProdutoControl.produto.descricao }" />
+				
+				<p:commandButton actionListener="#{ProdutoControl.confirmar }" value="Confirmar" ></p:commandButton>
+			</h:panelGrid>
+		</p:panel>
+		
+	
+
+	</ui:define>
+</ui:composition>
