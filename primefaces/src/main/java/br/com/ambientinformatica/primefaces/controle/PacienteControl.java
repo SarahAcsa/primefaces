@@ -11,36 +11,36 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import br.com.ambientinformatica.ambientjsf.util.UtilFaces;
-import br.com.ambientinformatica.primefaces.entidade.Contato;
-import br.com.ambientinformatica.primefaces.persistencia.ContatoDao;
+import br.com.ambientinformatica.primefaces.entidade.Paciente;
+import br.com.ambientinformatica.primefaces.persistencia.PacienteDao;
 
-@Controller("ContatoControl")
+@Controller("PacienteControl")
 @Scope("conversation")
-public class ContatoControl implements Serializable {
+public class PacienteControl implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private Contato contato = new Contato();
+	private Paciente paciente = new Paciente();
 	
 
 	@Autowired
-	private ContatoDao contatoDao;
+	private PacienteDao pacienteDao;
 
-	private List<Contato> contatos = new ArrayList<Contato>();
+	private List<Paciente> pacientes = new ArrayList<Paciente>();
 
-	public ContatoControl() {
+	public PacienteControl() {
 		// TODO Auto-generated constructor stub
 	}
 	
 
 	public void confirmar(ActionEvent evt) {
 		try {
-			contatoDao.alterar(contato);
+			pacienteDao.alterar(paciente);
 			listar(evt);
-			contato = new Contato();
+			paciente = new Paciente();
 		} catch (Exception e) {
 			UtilFaces.addMensagemFaces(e);
 		}
@@ -48,22 +48,22 @@ public class ContatoControl implements Serializable {
 
 	public void listar(ActionEvent evt) {
 		try {
-			contatos = contatoDao.listar();
+			pacientes = pacienteDao.listar();
 		} catch (Exception e) {
 			UtilFaces.addMensagemFaces(e);
 		}
 	}
 
-	public Contato getContato() {
-		return contato;
+	public Paciente getPaciente() {
+		return paciente;
 	}
 
-	public void setContato(Contato contato) {
-		this.contato = contato;
+	public void setPaciente(Paciente paciente) {
+		this.paciente = paciente;
 	}
 
-	public List<Contato> getContatos() {
-		return contatos;
+	public List<Paciente> getPacientes() {
+		return pacientes;
 	}
 
 }

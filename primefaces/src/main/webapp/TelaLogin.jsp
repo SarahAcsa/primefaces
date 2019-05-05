@@ -4,7 +4,7 @@
 <html>
 <head>
 
-<title>Sucata Zero</title>
+<title>Agendex</title>
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
@@ -77,38 +77,26 @@
 						<div class="carousel-inner" role="listbox">
 							<div class="carousel-item active">
 								<img class="d-block img-fluid"
-									src="https://www.siembra.com.br/img/noticias/grande/41de3e9555d987c82fd1e12e3c750718.png"
+									src="http://f.i.uol.com.br/folha/especial/images/17088262.jpeg"
 									alt="First slide">
 								<div class="carousel-caption d-none d-md-block">
 									<div class="banner-text">
-										<h2>Bem Vindo ao Sucata Zero</h2>
+										<h2>Bem Vindo</h2>
 										<p></p>
 									</div>
 								</div>
 							</div>
 							<div class="carousel-item">
 								<img class="d-block img-fluid"
-									src="http://jorgequadros.com.br/wp-content/uploads/2017/08/maxresdefault-9.jpg"
+									src="http://www.odefensor.com.br/site/wp-content/uploads/2019/02/agendamento-m%C3%A9dico.jpg"
 									alt="First slide">
 								<div class="carousel-caption d-none d-md-block">
 									<div class="banner-text">
-										<h2>Faça doações e ganhe descontos</h2>
-										<p>Com o Sucata Zero você pode acumular descontos no seu
-											IPTU</p>
+									
 									</div>
 								</div>
 							</div>
-							<div class="carousel-item">
-								<img class="d-block img-fluid"
-									src="https://www.multpainel.com.br/blog/wp-content/uploads/2018/05/Multpainel-logistica-reversa-reciclagem.jpg"
-									alt="First slide">
-								<div class="carousel-caption d-none d-md-block">
-									<div class="banner-text">
-										<h2>Cadastre o que você não usa mais</h2>
-										<p>Acompanhe o andamento de suas doações</p>
-									</div>
-								</div>
-							</div>
+					
 						</div>
 
 					</div>

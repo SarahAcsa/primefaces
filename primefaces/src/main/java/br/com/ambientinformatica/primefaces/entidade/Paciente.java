@@ -7,21 +7,48 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
 @Entity
-public class Contato {
+public class Paciente {
 
    @Id
-   @GeneratedValue(generator="contato_seq", strategy=GenerationType.SEQUENCE)
-   @SequenceGenerator(name="contato_seq", sequenceName="contato_seq", allocationSize=1, initialValue=1)
+   @GeneratedValue(generator="paciente_seq", strategy=GenerationType.SEQUENCE)
+   @SequenceGenerator(name="paciente_seq", sequenceName="paciente_seq", allocationSize=1, initialValue=1)
    private Integer id;
    
    private String nome;
+   private String nomesocial; 
    private String cpf; 
+   private String rg;
    private String telefone;
    private String nasc;
-   private String tipoPerfil;
+   private String sexo;
    private String email;
    private String endereco;
    
+   public String getOrgaoexpeditor() {
+	return orgaoexpeditor;
+}
+
+public void setOrgaoexpeditor(String orgaoexpeditor) {
+	this.orgaoexpeditor = orgaoexpeditor;
+}
+
+private String orgaoexpeditor;
+   
+   public String getRg() {
+	return rg;
+}
+
+public void setRg(String rg) {
+	this.rg = rg;
+}
+   
+   public String getNomesocial() {
+		return nomesocial;
+	}
+
+	public void setNomesocial(String nomesocial) {
+		this.nomesocial = nomesocial;
+	}	
    
    public String getEndereco() {
 	return endereco;
@@ -39,12 +66,12 @@ public void setNasc(String nasc) {
 	this.nasc = nasc;
 }
 
-public String getTipoPerfil() {
-	return tipoPerfil;
+public String getSexo() {
+	return sexo;
 }
 
-public void setTipoPerfil(String tipoPerfil) {
-	this.tipoPerfil = tipoPerfil;
+public void setSexo(String sexo) {
+	this.sexo = sexo;
 }
 
 public String getEmail() {
