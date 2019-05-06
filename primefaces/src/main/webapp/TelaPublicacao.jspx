@@ -7,7 +7,7 @@
 	xmlns:a="http://www.ambientinformatica.com.br/jsf2"
 	xmlns:p="http://primefaces.org/ui">
 	<ui:define name="corpo">
-		<Title>Menu</Title>
+		<Title>Listagem</Title>
 
 
 		
@@ -22,7 +22,7 @@
 
 					<p:menubar>
 						<p:submenu label="Opções" style="font-weight:bold">
-							<p:submenu label="Minhas doações" >
+							<p:submenu label="Meus agendamentos" >
 								<p:menuitem value="Editar" url="#" />
 								<p:menuitem value="Visualizar" url="#" />
 							</p:submenu>
@@ -32,8 +32,8 @@
 						</p:submenu>
 
 						<p:submenu label="Cadastro" >
-							<p:menuitem value="Cadastrar nova doação"
-								url="http://localhost:8080/primefaces/TelaCadProduto.jsf" />
+							<p:menuitem value="Cadastrar Paciente"
+								url="http://localhost:8080/primefaces/TelaCadPaciente.jsf" />
 							
 						</p:submenu>
 
@@ -47,8 +47,8 @@
 
 						<f:facet name="options">
 
-							<p:inputText id="txtPesquisa" style="margin:1px 10px 1px 1px;" placeholder="Search" value="#{ProdutoControl.nome}"/>
-							<p:commandButton actionListener="#{ProdutoControl.listar2}" type="button" value="Pesquisar" update="produtos, panel"/>
+							<p:inputText id="txtPesquisa" style="margin:1px 10px 1px 1px;" placeholder="Search" value="#{PacienteControl.nome}"/>
+							<p:commandButton actionListener="#{PacienteControl.listar2()}" type="button" value="Pesquisar" update="pacientes2, panel"/>
 						</f:facet>
 					</p:menubar>
 				</h:form>
@@ -59,9 +59,9 @@
 <p:panel position="west" size="250"  style="font-weight:normal" id="panel">
 			
 			
-				<p:dataTable id="produtos" value="#{ProdutoControl.produtos}" var="cont" emptyMessage="Sem registros" style="width:50">
+				<p:dataTable id="pacientes" value="#{PacienteControl.pacientes2}" var="cont" emptyMessage="Sem registros" style="width:50">
 					<f:facet name="header">
-						<h:outputText value="publicações" />
+						<h:outputText value="Lista de Pacientes" />
 					</f:facet>
 					<p:column sortBy="#{cont.nome }">
 						<f:facet name="header">
@@ -73,7 +73,7 @@
 				</p:dataTable>
 <p:commandButton value="ver" onclick=" PF('wdialog').show();" />
 				<p:dialog id="dialog" widgetVar="wdialog" > 
-				sarah
+				
 				</p:dialog>
 		</p:panel>
 	
