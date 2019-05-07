@@ -23,6 +23,8 @@ public class Paciente {
    private String sexo;
    private String email;
    private String endereco;
+   private String orgaoexpeditor;
+   
    
    public String getOrgaoexpeditor() {
 	return orgaoexpeditor;
@@ -32,7 +34,7 @@ public void setOrgaoexpeditor(String orgaoexpeditor) {
 	this.orgaoexpeditor = orgaoexpeditor;
 }
 
-private String orgaoexpeditor;
+
    
    public String getRg() {
 	return rg;

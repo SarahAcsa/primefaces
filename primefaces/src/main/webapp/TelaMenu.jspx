@@ -104,7 +104,7 @@
 					</p:dataTable>
 				<p:commandButton value="ver" onclick=" PF('wdialog').show();" />
 				<p:dialog id="dialog" widgetVar="wdialog" > 
-				sarah
+				
 				</p:dialog>
 				
 			</p:layoutUnit>

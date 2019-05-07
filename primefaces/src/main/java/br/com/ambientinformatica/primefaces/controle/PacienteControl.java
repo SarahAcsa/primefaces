@@ -12,8 +12,9 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import br.com.ambientinformatica.ambientjsf.util.UtilFaces;
+import br.com.ambientinformatica.jpa.exception.PersistenciaException;
 import br.com.ambientinformatica.primefaces.entidade.Paciente;
-import br.com.ambientinformatica.primefaces.entidade.Produto;
+import br.com.ambientinformatica.primefaces.entidade.Medico;
 import br.com.ambientinformatica.primefaces.persistencia.PacienteDao;
 
 @Controller("PacienteControl")
@@ -109,4 +110,22 @@ public class PacienteControl implements Serializable {
 	public void setManager(EntityManager manager) {
 		this.manager = manager;
 	}
+	
+	public List<Paciente> getPacientes2() {
+		if(pacientes2 == null) {
+			try {
+				System.out.println("GET");
+				pacientes2 = pacienteDao.listar();
+			} catch (PersistenciaException e) {
+				pacientes2 = new ArrayList<Paciente>();
+			}
+		}
+		return pacientes2;
+	}
+
+	public void setPacientess2(List<Paciente> pacientes2) {
+		this.pacientes2 = pacientes2;
+	}
+
+	
 }

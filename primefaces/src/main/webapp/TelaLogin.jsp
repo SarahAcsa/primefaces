@@ -40,7 +40,12 @@
 					<div class="SignupForm">
 						<h2 class="text-center">Login</h2>
 
+				<%
+					if (request.getParameter("msg") != null) {
+						out.print("<span style='color: red;font-weight: bold;'>Usuário ou senha incorretos</span>");
+					}%>	
 						<div class="form-group">
+						
 							<label for="exampleInputEmail1" class="text-uppercase">Usuário</label>
 							<input type="text" id="usuario" name="j_username" class="form-control"  />
 							

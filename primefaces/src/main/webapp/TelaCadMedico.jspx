@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ui:composition template="template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://www.ambientinformatica.com.br/jsf2"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="corpo">
+
+
+		<p:panel header="Cadastro de Medicos" id="panel">
+			<h:panelGrid columns="2">
+				<h:outputText value="Nome" style="font-weight:bold"></h:outputText>
+				<p:inputText value="#{MedicoControl.medico.nome }"></p:inputText>
+				
+				<h:outputText value="Especialidade" style="font-weight:bold"></h:outputText>
+				<p:inputText value="#{MedicoControl.medico.especialidade }"></p:inputText>
+			
+				<h:outputText value="CPF" style="font-weight:bold"></h:outputText>
+				<p:inputMask value="#{MedicoControl.medico.cpf }"
+					mask="999.999.999-99"></p:inputMask>
+					
+				<h:outputText value="CRM" style="font-weight:bold"></h:outputText>
+				<p:inputMask value="#{MedicoControl.medico.crm }"
+					mask="999-999-999-99"></p:inputMask>	
+					
+				<h:outputText value="E-mail" style="font-weight:bold"></h:outputText>
+				<p:inputText value="#{MedicoControl.medico.email }"></p:inputText>
+				
+				<h:outputText value="Endereço" style="font-weight:bold"></h:outputText>
+				<p:inputText value="#{MedicoControl.medico.endereco }"></p:inputText>
+	
+				
+				<h:outputText value="Sexo" style="font-weight:bold"></h:outputText>
+				<p:selectOneMenu id="console3"
+					value="#{MedicoControl.medico.sexo }" style="width:200px">
+
+					<f:selectItem itemLabel="Masculino" itemValue="Masculino" />
+					<f:selectItem itemLabel="Feminino" itemValue="Feminino" />
+
+				</p:selectOneMenu>
+				
+				<p:outputLabel for="button" value="Data Nasc" style="font-weight:bold" />
+				<p:calendar id="button" value="#{MedicoControl.medico.dataNasc }"
+					showOn="button" />
+				
+				
+				<p:commandButton actionListener="#{MedicoControl.confirmar }" value="Confirmar" ></p:commandButton>
+			</h:panelGrid>
+		</p:panel>
+		
+	
+
+	</ui:define>
+</ui:composition>

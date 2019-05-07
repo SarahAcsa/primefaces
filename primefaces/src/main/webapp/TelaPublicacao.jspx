@@ -47,8 +47,11 @@
 
 						<f:facet name="options">
 
-							<p:inputText id="txtPesquisa" style="margin:1px 10px 1px 1px;" placeholder="Search" value="#{PacienteControl.nome}"/>
-							<p:commandButton actionListener="#{PacienteControl.listar2()}" type="button" value="Pesquisar" update="pacientes2, panel"/>
+							<p:inputText id="txtPesquisa" style="margin:1px 10px 1px 1px;"
+								placeholder="Search" value="#{PacienteControl.nome}" />
+							<p:commandButton actionListener="#{PacienteControl.listar2()}"
+								value="Pesquisar" process="@form" update="@form"
+								onsuccess="location.reload();"/>
 						</f:facet>
 					</p:menubar>
 				</h:form>

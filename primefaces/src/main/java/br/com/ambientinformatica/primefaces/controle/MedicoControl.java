@@ -15,26 +15,26 @@ import org.springframework.stereotype.Controller;
 
 import br.com.ambientinformatica.ambientjsf.util.UtilFaces;
 import br.com.ambientinformatica.jpa.exception.PersistenciaException;
-import br.com.ambientinformatica.primefaces.entidade.Produto;
-import br.com.ambientinformatica.primefaces.persistencia.ProdutoDao;
+import br.com.ambientinformatica.primefaces.entidade.Medico;
+import br.com.ambientinformatica.primefaces.persistencia.MedicoDao;
 
-@Controller("ProdutoControl")
+@Controller("MedicoControl")
 @Scope("conversation")
-public class ProdutoControl implements Serializable{
+public class MedicoControl implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	private Produto produto = new Produto(); 
+	private Medico medico = new Medico(); 
 	private String nome;
 	private String categoria1;
 	private String categoria2;
 	private String categoria3;
 	private String categoria4;
 	@Autowired
-	private ProdutoDao produtoDao;
+	private MedicoDao medicoDao;
 	
-	private List<Produto> produtos = new ArrayList<Produto>();
-	private List<Produto> produtos2;
+	private List<Medico> medicos = new ArrayList<Medico>();
+	private List<Medico> medicos2;
 	
 	private EntityManager manager;
 	
@@ -43,15 +43,15 @@ public class ProdutoControl implements Serializable{
 //	      listar(null);
 //	   }
 	
-	public ProdutoControl() {
+	public MedicoControl() {
 //		listar2();
 	}
 	
 	public void confirmar(ActionEvent evt) {
 		try {
-			produtoDao.alterar(produto);
+			medicoDao.alterar(medico);
 			listar(evt);
-			produto = new Produto();
+			medico = new Medico();
 		} catch (Exception e) {
 			UtilFaces.addMensagemFaces(e);
 		}
@@ -59,7 +59,7 @@ public class ProdutoControl implements Serializable{
 	
 	public void listar(ActionEvent evt) {
 		try {
-			produtos = produtoDao.listar();
+			medicos = medicoDao.listar();
 		} catch (Exception e) {
 			UtilFaces.addMensagemFaces(e);
 		}
@@ -70,10 +70,10 @@ public class ProdutoControl implements Serializable{
 		try {
 			System.out.println("Entrou");
 			if(nome != null && !nome.trim().equals("")) {
-				produtos2 = produtoDao.listarPorNome(nome);
+				medicos2 = medicoDao.listarPorNome(nome);
 			}
 			else{
-				produtos2 = produtoDao.listar();
+				medicos2 = medicoDao.listar();
 			}
 			
 		} catch (Exception e) {
@@ -84,7 +84,7 @@ public class ProdutoControl implements Serializable{
 	public void listar3() {
 		try {
 			
-				produtos2 = produtoDao.listarPorCategoriaEletronico(categoria1);
+			medicos2 = medicoDao.listarPorCategoriaEletronico(categoria1);
 
 		} catch (Exception e) {
 			UtilFaces.addMensagemFaces(e);
@@ -92,7 +92,7 @@ public class ProdutoControl implements Serializable{
 	}
 	public void listar4() {
 		try {
-				produtos2 = produtoDao.listarPorCategoriaEletrodomestico(categoria2);
+			medicos2 = medicoDao.listarPorCategoriaEletrodomestico(categoria2);
 		} catch (Exception e) {
 			UtilFaces.addMensagemFaces(e);
 		}
@@ -100,14 +100,14 @@ public class ProdutoControl implements Serializable{
 	
 	public void listar5() {
 		try {
-			produtos2 = produtoDao.listarPorCategoriaMovel(categoria3);
+			medicos2 = medicoDao.listarPorCategoriaMovel(categoria3);
 		} catch (Exception e) {
 			UtilFaces.addMensagemFaces(e);
 		}
 	}
 	public void listar6() {
 		try {
-			produtos2 = produtoDao.listarPorCategoriaOutros(categoria4);
+			medicos2 = medicoDao.listarPorCategoriaOutros(categoria4);
 		} catch (Exception e) {
 			UtilFaces.addMensagemFaces(e);
 		}
@@ -115,12 +115,12 @@ public class ProdutoControl implements Serializable{
 	
 	
 
-	public Produto getProduto() {
-		return produto;
+	public Medico getMedico() {
+		return medico;
 	}
 
-	public void setProduto(Produto produto) {
-		this.produto = produto;
+	public void setMedico(Medico medico) {
+		this.medico = medico;
 	}
 
 	public String getNome() {
@@ -131,36 +131,36 @@ public class ProdutoControl implements Serializable{
 		this.nome = nome;
 	}
 
-	public ProdutoDao getProdutoDao() {
-		return produtoDao;
+	public MedicoDao getMedicoDao() {
+		return medicoDao;
 	}
 
-	public void setProdutoDao(ProdutoDao produtoDao) {
-		this.produtoDao = produtoDao;
+	public void setMedicoDao(MedicoDao medicoDao) {
+		this.medicoDao = medicoDao;
 	}
 
-	public List<Produto> getProdutos() {
-		return produtos;
+	public List<Medico> getMedicos() {
+		return medicos;
 	}
 
-	public void setProdutos(List<Produto> produtos) {
-		this.produtos = produtos;
+	public void setMedicos(List<Medico> medicos) {
+		this.medicos = medicos;
 	}
 
-	public List<Produto> getProdutos2() {
-		if(produtos2 == null) {
+	public List<Medico> getMedicos2() {
+		if(medicos2 == null) {
 			try {
 				System.out.println("GET");
-				produtos2 = produtoDao.listar();
+				medicos2 = medicoDao.listar();
 			} catch (PersistenciaException e) {
-				produtos2 = new ArrayList<Produto>();
+				medicos2 = new ArrayList<Medico>();
 			}
 		}
-		return produtos2;
+		return medicos2;
 	}
 
-	public void setProdutos2(List<Produto> produtos2) {
-		this.produtos2 = produtos2;
+	public void setProdutos2(List<Medico> medicos2) {
+		this.medicos2 = medicos2;
 	}
 
 	public EntityManager getManager() {
