@@ -19,11 +19,9 @@
 
 
 					<p:separator />
-					<p:submenu label="Categorias">
-						<p:menuitem value="Eletrônico" actionListener="#{ProdutoControl.listar3()}"  process="@form" update="@form" onsuccess="location.reload();"/>
-						<p:menuitem value="Eletrodomésticos" actionListener="#{ProdutoControl.listar4()}"  process="@form" update="@form" onsuccess="location.reload();" />
-						<p:menuitem value="Móvel" actionListener="#{ProdutoControl.listar5()}"  process="@form" update="@form" onsuccess="location.reload();"/>
-						<p:menuitem value="Outros" actionListener="#{ProdutoControl.listar6()}"  process="@form" update="@form" onsuccess="location.reload();" />
+					<p:submenu label="Especialidades">
+						<p:menuitem value="Cardiologista" actionListener="#{MedicoControl.listar3()}"  process="@form" update="@form" onsuccess="location.reload();"/>
+						
 					</p:submenu>
 				</p:panelMenu>
 
@@ -39,18 +37,19 @@
 
 					<p:menubar>
 						<p:submenu label="Opções" style="font-weight:bold">
-							<p:submenu label="Minhas doações">
-								<p:menuitem value="Editar" url="#" />
-								<p:menuitem value="Visualizar" url="#" />
+							<p:submenu label="Perfil">
+								<p:menuitem value="Editar dados pessoais" url="#" />
+								
 							</p:submenu>
-							<p:menuitem value="Perfil" url="#" />
+							<p:menuitem value="Minhas consultas" url="#" />
+							<p:menuitem value="Buscar pacientes" url="http://localhost:8080/primefaces/TelaPesquisa.jsf" />
 							<p:separator />
 							<p:menuitem value="Sair" url="#" />
 						</p:submenu>
 
 						<p:submenu label="Cadastro">
-							<p:menuitem value="Cadastrar nova doação"
-								url="http://localhost:8080/primefaces/TelaCadProduto.jsf" />
+							<p:menuitem value="Cadastrar agendamento"
+								url="#" />
 
 						</p:submenu>
 
@@ -65,8 +64,8 @@
 						<f:facet name="options">
 
 							<p:inputText id="txtPesquisa" style="margin:1px 10px 1px 1px;"
-								placeholder="Search" value="#{ProdutoControl.nome}" />
-							<p:commandButton actionListener="#{ProdutoControl.listar2()}"
+								placeholder="Search" value="#{MedicoControl.nome}" />
+							<p:commandButton actionListener="#{MedicoControl.listar2()}"
 								value="Pesquisar" process="@form" update="@form"
 								onsuccess="location.reload();"/>
 							
@@ -74,7 +73,7 @@
 					</p:menubar>
 					
 				</h:form>
-				<p:dataTable id="produtos" value="#{ProdutoControl.produtos2}"
+				<p:dataTable id="produtos" value="#{MedicoControl.medicos2}"
 						var="cont"  width="40%" emptyMessage="Sem registros" rows="4" paginator="true">
 						
 					
@@ -84,17 +83,17 @@
 							</f:facet>
 							<h:outputText value="#{cont.nome }" />
 						</p:column>
-						<p:column sortBy="#{cont.categoria }">
+						<p:column sortBy="#{cont.especialidade }">
 							<f:facet name="header">
-								<h:outputText value="categoria" />
+								<h:outputText value="especialidade" />
 							</f:facet>
-							<h:outputText value="#{cont.categoria }" />
+							<h:outputText value="#{cont.especialidade }" />
 						</p:column>
-						<p:column sortBy="#{cont.estado }">
+						<p:column sortBy="#{cont.sexo }">
 							<f:facet name="header">
-								<h:outputText value="estado" />
+								<h:outputText value="sexo" />
 							</f:facet>
-							<h:outputText value="#{cont.estado }" />
+							<h:outputText value="#{cont.sexo }" />
 						</p:column>
 						<p:column style="width: 30px; text-align: center">
     			<p:commandButton icon="ui-icon-check" title="Selecionar" process="@this" />

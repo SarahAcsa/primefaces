@@ -8,8 +8,6 @@ import br.com.ambientinformatica.primefaces.entidade.Medico;
 public interface MedicoDao extends Persistencia<Medico>{
 
 	List<Medico> listarPorNome(String nome);
-	List<Medico> listarPorCategoriaEletronico(String categoria1);
-	List<Medico> listarPorCategoriaEletrodomestico(String categoria2);
-	List<Medico> listarPorCategoriaMovel(String categoria3);
-	List<Medico> listarPorCategoriaOutros(String categoria4);
+	List<Medico> listarPorEspecialidade(String categoria1);
+	
 }

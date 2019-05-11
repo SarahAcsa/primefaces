@@ -26,46 +26,18 @@ public class MedicoDaoJpa extends PersistenciaJpa<Medico> implements MedicoDao {
 		return lista;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public List<Medico> listarPorCategoriaEletronico(String categoria1) {
+	public List<Medico> listarPorEspecialidade(String categoria1) {
 		List<Medico> lista2;
 
 		
-		Query consultacat = getEntityManager().createQuery(String.format("SELECT p FROM Medico p WHERE p.categoria LIKE 'Eletronico'", categoria1));
+		Query consultacat = getEntityManager().createQuery(String.format("SELECT p FROM Medico p WHERE p.especialidade LIKE 'cardiologista'", categoria1));
 		lista2 = consultacat.getResultList();
 		return lista2;
 	}
 
-	@Override
-	public List<Medico> listarPorCategoriaEletrodomestico(String categoria2) {
-		List<Medico> lista2;
-
-		
-		Query consultacat = getEntityManager().createQuery(String.format("SELECT p FROM Medico p WHERE p.categoria LIKE 'Eletrodoméstico'", categoria2));
-		lista2 = consultacat.getResultList();
-		return lista2;
-	}
-
-	@Override
-	public List<Medico> listarPorCategoriaMovel(String categoria3) {
-		List<Medico> lista2;
-
-		
-		Query consultacat = getEntityManager().createQuery(String.format("SELECT p FROM Medico p WHERE p.categoria LIKE 'Movél'", categoria3));
-		lista2 = consultacat.getResultList();
-		return lista2;
-	}
-
-	@Override
-	public List<Medico> listarPorCategoriaOutros(String categoria4) {
-		List<Medico> lista2;
-
-		
-		Query consultacat = getEntityManager().createQuery(String.format("SELECT p FROM Medico p WHERE p.categoria LIKE 'Outros'", categoria4));
-		lista2 = consultacat.getResultList();
-		return lista2;
-	}
-
+	
 	
 	
 	

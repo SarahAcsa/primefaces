@@ -14,6 +14,7 @@ public class PacienteDaoJpa extends PersistenciaJpa<Paciente> implements Pacient
 
 	private static final long serialVersionUID = 1L;
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Paciente> listarPorNome(String nome) {
 		List<Paciente> lista;

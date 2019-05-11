@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
+
 import javax.faces.event.ActionEvent;
 import javax.persistence.EntityManager;
 
@@ -27,9 +27,7 @@ public class MedicoControl implements Serializable{
 	private Medico medico = new Medico(); 
 	private String nome;
 	private String categoria1;
-	private String categoria2;
-	private String categoria3;
-	private String categoria4;
+	
 	@Autowired
 	private MedicoDao medicoDao;
 	
@@ -84,30 +82,8 @@ public class MedicoControl implements Serializable{
 	public void listar3() {
 		try {
 			
-			medicos2 = medicoDao.listarPorCategoriaEletronico(categoria1);
+			medicos2 = medicoDao.listarPorEspecialidade(categoria1);
 
-		} catch (Exception e) {
-			UtilFaces.addMensagemFaces(e);
-		}
-	}
-	public void listar4() {
-		try {
-			medicos2 = medicoDao.listarPorCategoriaEletrodomestico(categoria2);
-		} catch (Exception e) {
-			UtilFaces.addMensagemFaces(e);
-		}
-	}
-	
-	public void listar5() {
-		try {
-			medicos2 = medicoDao.listarPorCategoriaMovel(categoria3);
-		} catch (Exception e) {
-			UtilFaces.addMensagemFaces(e);
-		}
-	}
-	public void listar6() {
-		try {
-			medicos2 = medicoDao.listarPorCategoriaOutros(categoria4);
 		} catch (Exception e) {
 			UtilFaces.addMensagemFaces(e);
 		}
