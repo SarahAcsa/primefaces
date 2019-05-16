@@ -48,6 +48,7 @@ public class PacienteControl implements Serializable {
 	public void confirmar(ActionEvent evt) {
 		try {
 			pacienteDao.alterar(paciente);
+			
 			listar(evt);
 			paciente = new Paciente();
 		} catch (Exception e) {

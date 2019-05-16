@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ui:composition template="template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://www.ambientinformatica.com.br/jsf2"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="corpo">
+
+		<p:panel header="Cadastro de Paciente" id="panel">
+		<div align="center" >
+			<h:panelGrid columns="4">
+			
+				<h:outputText value="Nome" style="font-weight:bold"></h:outputText>
+				<p:inputText value="#{PacienteControl.paciente.nome }"></p:inputText>
+				
+				<h:outputText value="Nome Social" style="font-weight:bold"></h:outputText>
+				<p:inputText value="#{PacienteControl.paciente.nomesocial }"></p:inputText>
+
+				<p:outputLabel for="button" value="Data Nasc" style="font-weight:bold" />
+				<p:calendar id="button" value="#{PacienteControl.paciente.nasc }"
+					showOn="button" />
+
+
+				<h:outputText value="CPF" style="font-weight:bold"></h:outputText>
+				<p:inputMask value="#{PacienteControl.paciente.cpf }"
+					mask="999.999.999-99"></p:inputMask>
+					
+				<h:outputText value="RG" style="font-weight:bold"></h:outputText>
+				<p:inputMask value="#{PacienteControl.paciente.rg }"
+					mask="99999-999"></p:inputMask>
+
+				<h:outputText value="Telefone" style="font-weight:bold"></h:outputText>
+				<p:inputMask value="#{PacienteControl.paciente.telefone }"
+					mask="(99) 9999-9999"></p:inputMask>
+
+				<h:outputText value="E-Mail" style="font-weight:bold"></h:outputText>
+				<p:inputMask value="#{PacienteControl.paciente.email }"></p:inputMask>
+
+				<h:outputText value="Confirmar E-Mail" style="font-weight:bold"></h:outputText>
+				<p:inputMask value="#{PacienteControl.paciente.email }"></p:inputMask>
+				
+				<h:outputText value="Endereço" style="font-weight:bold"></h:outputText>
+				<p:inputText value="#{PacienteControl.paciente.endereco }"></p:inputText>
+				
+				<h:outputText value="Senha" style="font-weight:bold"></h:outputText>
+				<p:inputText value="#{PacienteControl.paciente.endereco }"></p:inputText>
+
+				<p:outputLabel for="console" value="Sexo" style="font-weight:bold"/>
+				<p:selectOneMenu id="console"
+					value="#{PacienteControl.paciente.sexo }" style="width:125px">
+
+					<f:selectItem itemLabel="Masculino" itemValue="Masculino" />
+					<f:selectItem itemLabel="Femenino" itemValue="Femenino" />
+
+				</p:selectOneMenu>
+			
+				
+				<p:outputLabel for="console2" value="Orgão Expeditor" style="font-weight:bold"/>
+				<p:selectOneMenu id="console2"
+					value="#{PacienteControl.paciente.orgaoexpeditor }" style="width:125px">
+
+					<f:selectItem itemLabel="SSP" itemValue="SSP" />
+					<f:selectItem itemLabel="Cartório Civil " itemValue="Cartório Civil" />
+
+				</p:selectOneMenu>
+				
+
+
+					
+			</h:panelGrid>
+			</div>
+				<div align="right">
+				<p:commandButton actionListener="#{PacienteControl.confirmar }"
+					value="Confirmar" style="font-weight:bold"></p:commandButton>
+					
+					</div >
+		</p:panel>
+
+	</ui:define>
+</ui:composition>

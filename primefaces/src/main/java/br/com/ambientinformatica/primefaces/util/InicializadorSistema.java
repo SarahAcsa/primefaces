@@ -32,9 +32,10 @@ public class InicializadorSistema {
 				usu.setLogin("admin");
 				usu.setSenhaNaoCriptografada("123456");
 				usu.addPapel(EnumPapelUsuario.ADMIN);
-				usu.addPapel(EnumPapelUsuario.USUARIO);
+				usu.addPapel(EnumPapelUsuario.MEDICO);
+				usu.addPapel(EnumPapelUsuario.PACIENTE);
 				usuarioDao.incluir(usu);
-				UtilLog.getLog().info("*** USUÃ?RIO admin CRIADO com a senha 123456 ***");
+				UtilLog.getLog().info("*** USUï¿½?RIO admin CRIADO com a senha 123456 ***");
 			}
 		} catch (Exception e) {
 			UtilLog.getLog().error(e.getMessage(), e);

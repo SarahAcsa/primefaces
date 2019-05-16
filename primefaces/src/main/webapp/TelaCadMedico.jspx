@@ -10,7 +10,9 @@
 
 
 		<p:panel header="Cadastro de Medicos" id="panel">
-			<h:panelGrid columns="2">
+			<div align="center"> 
+			<h:panelGrid columns="4">
+			 
 				<h:outputText value="Nome" style="font-weight:bold"></h:outputText>
 				<p:inputText value="#{MedicoControl.medico.nome }"></p:inputText>
 				
@@ -28,9 +30,18 @@
 				<h:outputText value="E-mail" style="font-weight:bold"></h:outputText>
 				<p:inputText value="#{MedicoControl.medico.email }"></p:inputText>
 				
+				<h:outputText value="Confirmar e-mail" style="font-weight:bold"></h:outputText>
+				<p:inputText value="#{MedicoControl.medico.email }"></p:inputText>
+				
 				<h:outputText value="Endereço" style="font-weight:bold"></h:outputText>
 				<p:inputText value="#{MedicoControl.medico.endereco }"></p:inputText>
 	
+				<h:outputText value="Senha" style="font-weight:bold"></h:outputText>
+				<p:inputText value="#{MedicoControl.medico.nome }"></p:inputText>
+				
+				<h:outputText value="Telefone" style="font-weight:bold"></h:outputText>
+				<p:inputMask value="#{MedicoControl.medico.telefone }"
+					mask="(99) 9999-9999"></p:inputMask>
 				
 				<h:outputText value="Sexo" style="font-weight:bold"></h:outputText>
 				<p:selectOneMenu id="console3"
@@ -48,6 +59,7 @@
 				
 				<p:commandButton actionListener="#{MedicoControl.confirmar }" value="Confirmar" ></p:commandButton>
 			</h:panelGrid>
+			</div>
 		</p:panel>
 		
 	

@@ -24,6 +24,7 @@ public class Medico {
 	
 	private String nome;
 	private String especialidade;
+	
 	@CpfCnpj
 	private String cpf;
 	private String crm;
