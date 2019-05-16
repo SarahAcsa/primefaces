@@ -38,7 +38,7 @@
 				<div class="col-md-4 login-sec">
 
 					<div class="SignupForm">
-					<h2 class="pull-left"><a href="index.html"><strong>Agendex</strong></a></h2>
+					<h1 class="pull-left"><a href="index.html"><strong>Login</strong></a></h1>
 						
 
 				<%
@@ -57,11 +57,18 @@
 							<input name="j_password" type="password" class="form-control" /> 
 							
 						</div>
-						<a>Ainda não sou Cadastrado?</a>
-						<a href="http://localhost:8080/primefaces/TelaCadUsuario.jsf">Cadastrar-se</a>						
-						<p><p>
+
+
+						<div class="form-check">
+							<label class="form-check-label"> <input type="checkbox"
+								class="form-check-input"> <small>Lembra-Me</small>
+								
+								<p></p>
+							</label>
+						</div>
 						<input class="btn btn-primary" type="submit" value="Entrar"/>
 						
+						<input class="btn btn-primary" type="submit" value="teste"/>
 
 					</div>
 				</div>

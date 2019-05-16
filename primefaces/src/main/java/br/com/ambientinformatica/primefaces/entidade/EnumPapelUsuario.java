@@ -4,9 +4,6 @@ public enum EnumPapelUsuario {
 
    ADMIN,
    
-   PACIENTE,
-   
-   MEDICO;
-   
+   USUARIO;
    
 }

@@ -1,16 +1,10 @@
 package br.com.ambientinformatica.primefaces.entidade;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-import br.com.ambientinformatica.jpa.util.CpfCnpj;
 
 @Entity
 public class Paciente {
@@ -22,15 +16,10 @@ public class Paciente {
    
    private String nome;
    private String nomesocial; 
-   
-   @CpfCnpj
    private String cpf; 
    private String rg;
    private String telefone;
-   
-   @Temporal(TemporalType.DATE)
-   private Date nasc;
-   
+   private String nasc;
    private String sexo;
    private String email;
    private String endereco;
@@ -71,11 +60,11 @@ public void setEndereco(String endereco) {
 	this.endereco = endereco;
 }
 
-public Date getNasc() {
+public String getNasc() {
 	return nasc;
 }
 
-public void setNasc(Date nasc) {
+public void setNasc(String nasc) {
 	this.nasc = nasc;
 }
 

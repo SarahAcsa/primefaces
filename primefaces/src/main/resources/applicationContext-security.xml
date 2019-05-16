@@ -14,10 +14,10 @@
 	<http auto-config="true" access-denied-page="/acessoNegado.jsf" access-decision-manager-ref="accessDecisionManager">
 	    <intercept-url pattern="/javax.faces.resource/*" filters="none" />
 		<intercept-url pattern="/TelaLogin.jsp*" filters="none" />
-		<intercept-url pattern="/TelaCadUsuario.jsf*" filters="none" />
+		<intercept-url pattern="/TelaPesquisa.jsf*" filters="none" />
 		<intercept-url pattern="/**.jsf" access="USUARIO" />
 		<form-login authentication-failure-url="/TelaLogin.jsp?msg=erro" login-page="/TelaLogin.jsp" />
-		<logout logout-success-url="/TelaMenuPaciente.jsp" />
+		<logout logout-success-url="/TelaMenu.jsp" />
 	</http>
 
 	<beans:bean id="accessDecisionManager"
