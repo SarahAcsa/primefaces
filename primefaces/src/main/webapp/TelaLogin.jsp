@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@page contentType="text/html; charset=UTF-8"%>
 <html>
@@ -38,7 +37,7 @@
 				<div class="col-md-4 login-sec">
 
 					<div class="SignupForm">
-					<h1 class="pull-left"><a href="index.html"><strong>Login</strong></a></h1>
+					<h2 class="pull-left"><a href="index.html"><strong>Agendex</strong></a></h2>
 						
 
 				<%
@@ -57,18 +56,11 @@
 							<input name="j_password" type="password" class="form-control" /> 
 							
 						</div>
-
-
-						<div class="form-check">
-							<label class="form-check-label"> <input type="checkbox"
-								class="form-check-input"> <small>Lembra-Me</small>
-								
-								<p></p>
-							</label>
-						</div>
+						<a>Ainda não sou Cadastrado?</a>
+						<a href="http://localhost:8080/primefaces/TelaCadUsuario.jsf">Cadastrar-se</a>						
+						<p><p>
 						<input class="btn btn-primary" type="submit" value="Entrar"/>
 						
-						<input class="btn btn-primary" type="submit" value="teste"/>
 
 					</div>
 				</div>

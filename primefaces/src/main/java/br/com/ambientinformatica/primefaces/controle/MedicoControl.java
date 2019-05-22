@@ -50,6 +50,7 @@ public class MedicoControl implements Serializable{
 			medicoDao.alterar(medico);
 			listar(evt);
 			medico = new Medico();
+			 UtilFaces.addMensagemFaces("Médico Salvo com sucesso!");
 		} catch (Exception e) {
 			UtilFaces.addMensagemFaces(e);
 		}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ui:composition template="template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://www.ambientinformatica.com.br/jsf2"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="corpo">
+
+		<p:panel header="Cadastro de Paciente" id="panel">
+			<div align="center">
+				<h:panelGrid columns="4">
+
+					<h:outputText value="Usuario" style="font-weight:bold"></h:outputText>
+					<p:inputText value="#{UsuarioControl.usuario.nome }"></p:inputText>
+
+					<h:outputText value="Senha" style="font-weight:bold"></h:outputText>
+					<p:inputText value="#{UsuarioControl.usuario.senha }"></p:inputText>
+
+					<h:outputText value="confirmar senha" style="font-weight:bold"></h:outputText>
+					<p:inputMask value="#{UsuarioControl.usuario.senha}"
+						mask="(99) 9999-9999"></p:inputMask>
+
+				</h:panelGrid>
+			</div>
+			<div align="right">
+				<p:commandButton actionListener="#{UsuarioControl.confirmar }"
+					value="Confirmar" style="font-weight:bold"></p:commandButton>
+					
+			
+				
+			</div>
+		</p:panel>
+
+	</ui:define>
+</ui:composition>

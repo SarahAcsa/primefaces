@@ -14,8 +14,9 @@ import org.springframework.stereotype.Controller;
 import br.com.ambientinformatica.ambientjsf.util.UtilFaces;
 import br.com.ambientinformatica.jpa.exception.PersistenciaException;
 import br.com.ambientinformatica.primefaces.entidade.Paciente;
-import br.com.ambientinformatica.primefaces.entidade.Medico;
 import br.com.ambientinformatica.primefaces.persistencia.PacienteDao;
+
+import br.com.ambientinformatica.ambientjsf.util.UtilFaces;
 
 @Controller("PacienteControl")
 @Scope("conversation")
@@ -50,6 +51,8 @@ public class PacienteControl implements Serializable {
 			pacienteDao.alterar(paciente);
 			listar(evt);
 			paciente = new Paciente();
+			
+			 UtilFaces.addMensagemFaces("Paciente Salvo com sucesso!");
 		} catch (Exception e) {
 			UtilFaces.addMensagemFaces(e);
 		}

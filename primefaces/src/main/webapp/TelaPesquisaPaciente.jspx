@@ -7,42 +7,21 @@
 	xmlns:a="http://www.ambientinformatica.com.br/jsf2"
 	xmlns:p="http://primefaces.org/ui">
 	<ui:define name="corpo">
-		<Title>Pesguisar</Title>
+		<Title>Minhas Consultas</Title>
 
 
 		
-
-			
-
-
-
 			<p:layoutUnit position="center">
 				<h:form>
 					<p:growl id="messages" />
 
 					<p:menubar>
 						<p:submenu label="Opções" style="font-weight:bold">
-							<p:submenu label="Meus agendamentos" >
-								<p:menuitem value="Editar" url="#" />
-								<p:menuitem value="Visualizar" url="#" />
-							</p:submenu>
-							<p:menuitem value="Perfil" url="#" />
-							<p:separator />
-							<p:menuitem value="Sair" url="#" />
+														
+							<p:menuitem value="Tela Inicial" url="http://localhost:8080/primefaces/TelaMenuMedico.jsf" />
 						</p:submenu>
 
-						<p:submenu label="Cadastro" >
-							<p:menuitem value="Cadastrar Paciente"
-								url="http://localhost:8080/primefaces/TelaCadPaciente.jsf" />
-							
-						</p:submenu>
-
-						<p:submenu label="Help" >
-							
-							<p:submenu label="Search" >
-								
-							</p:submenu>
-						</p:submenu>
+					
 
 
 						<f:facet name="options">

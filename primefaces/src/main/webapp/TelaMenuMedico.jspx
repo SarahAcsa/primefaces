@@ -12,22 +12,7 @@
 
 		<p:layout fullPage="true">
 
-			<p:layoutUnit position="west" size="250" resizable="false"
-				style="font-weight:normal">
-
-				<p:panelMenu style="width:250">
-
-
-					<p:separator />
-					<p:submenu label="Especialidades">
-						<p:menuitem value="Cardiologista" actionListener="#{MedicoControl.listar3()}"  process="@form" update="@form" onsuccess="location.reload();"/>
-						
-					</p:submenu>
-				</p:panelMenu>
-
-
-
-			</p:layoutUnit>
+			
 
 
 
@@ -38,27 +23,20 @@
 					<p:menubar>
 						<p:submenu label="Opções" style="font-weight:bold">
 							<p:submenu label="Perfil">
-								<p:menuitem value="Editar dados pessoais" url="#" />
+								<p:menuitem value="Editar dados pessoais" url="http://localhost:8080/primefaces/TelaEditMedico.jsf" />
 								
 							</p:submenu>
 							<p:menuitem value="Minhas consultas" url="#" />
-							<p:menuitem value="Buscar pacientes" url="http://localhost:8080/primefaces/TelaPesquisa.jsf" />
+							<p:menuitem value="Buscar Pacientes" url="http://localhost:8080/primefaces/TelaPesquisaPaciente.jsf" />
 							<p:separator />
-							<p:menuitem value="Sair" url="#" />
+							<p:menuitem value="Sair" url="http://localhost:8080/primefaces/TelaLogin.jsp" />
 						</p:submenu>
 
 						<p:submenu label="Cadastro">
-							<p:menuitem value="Cadastrar agendamento"
-								url="#" />
+							<p:menuitem value="Cadastrar agendamento" url="http://localhost:8080/primefaces/TelaCadAgendamento.jsf" />
 
 						</p:submenu>
 
-						<p:submenu label="Help">
-
-							<p:submenu label="Search">
-
-							</p:submenu>
-						</p:submenu>
 
 
 						<f:facet name="options">
@@ -85,22 +63,24 @@
 						</p:column>
 						<p:column sortBy="#{cont.especialidade }">
 							<f:facet name="header">
-								<h:outputText value="especialidade" />
+								<h:outputText value="Consultas" />
 							</f:facet>
 							<h:outputText value="#{cont.especialidade }" />
 						</p:column>
-						<p:column sortBy="#{cont.sexo }">
-							<f:facet name="header">
-								<h:outputText value="sexo" />
-							</f:facet>
-							<h:outputText value="#{cont.sexo }" />
-						</p:column>
-						<p:column style="width: 30px; text-align: center">
-    			<p:commandButton icon="ui-icon-check" title="Selecionar" process="@this" />
-    			
-    		</p:column>
-						
-					</p:dataTable>
+					<p:column sortBy="#{cont.sexo }">
+						<f:facet name="header">
+							<h:outputText value="sexo" />
+						</f:facet>
+						<h:outputText value="#{cont.sexo }" />
+					</p:column>
+					
+					
+					<p:column style="width: 30px; text-align: center">
+						<p:commandButton icon="ui-icon-check" title="Selecionar" process="@this" url="http://localhost:8080/primefaces/TelaCadAgendamento.jsf" />
+				
+					</p:column>
+
+				</p:dataTable>
 				<p:commandButton value="ver" onclick=" PF('wdialog').show();" />
 				<p:dialog id="dialog" widgetVar="wdialog" > 
 				
